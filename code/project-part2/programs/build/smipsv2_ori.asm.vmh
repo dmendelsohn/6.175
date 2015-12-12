@@ -1,0 +1,172 @@
+
+@400      // <_ftext>
+3c02ff00  // 00001000 lui $v0,0xff00
+3442ff00  // 00001004 ori $v0,$v0,0xff00
+34440f0f  // 00001008 ori $a0,$v0,0xf0f
+3c1dff00  // 0000100c lui $sp,0xff00
+37bdff0f  // 00001010 ori $sp,$sp,0xff0f
+241e0002  // 00001014 li $s8,2
+149d0068  // 00001018 bne $a0,$sp,11bc <fail>
+
+@407      // <test_3>
+3c020ff0  // 0000101c lui $v0,0xff0
+34420ff0  // 00001020 ori $v0,$v0,0xff0
+3444f0f0  // 00001024 ori $a0,$v0,0xf0f0
+3c1d0ff0  // 00001028 lui $sp,0xff0
+37bdfff0  // 0000102c ori $sp,$sp,0xfff0
+241e0003  // 00001030 li $s8,3
+149d0061  // 00001034 bne $a0,$sp,11bc <fail>
+
+@40e      // <test_4>
+3c0200ff  // 00001038 lui $v0,0xff
+344200ff  // 0000103c ori $v0,$v0,0xff
+34440f0f  // 00001040 ori $a0,$v0,0xf0f
+3c1d00ff  // 00001044 lui $sp,0xff
+37bd0fff  // 00001048 ori $sp,$sp,0xfff
+241e0004  // 0000104c li $s8,4
+149d005a  // 00001050 bne $a0,$sp,11bc <fail>
+
+@415      // <test_5>
+3c02f00f  // 00001054 lui $v0,0xf00f
+3442f00f  // 00001058 ori $v0,$v0,0xf00f
+3444f0f0  // 0000105c ori $a0,$v0,0xf0f0
+3c1df00f  // 00001060 lui $sp,0xf00f
+37bdf0ff  // 00001064 ori $sp,$sp,0xf0ff
+241e0005  // 00001068 li $s8,5
+149d0053  // 0000106c bne $a0,$sp,11bc <fail>
+
+@41c      // <test_6>
+3c02ff00  // 00001070 lui $v0,0xff00
+3442ff00  // 00001074 ori $v0,$v0,0xff00
+3442f0f0  // 00001078 ori $v0,$v0,0xf0f0
+3c1dff00  // 0000107c lui $sp,0xff00
+37bdfff0  // 00001080 ori $sp,$sp,0xfff0
+241e0006  // 00001084 li $s8,6
+145d004c  // 00001088 bne $v0,$sp,11bc <fail>
+
+@423      // <test_7>
+24050000  // 0000108c li $a1,0
+3c020ff0  // 00001090 lui $v0,0xff0
+34420ff0  // 00001094 ori $v0,$v0,0xff0
+3444f0f0  // 00001098 ori $a0,$v0,0xf0f0
+24870000  // 0000109c addiu $a3,$a0,0
+24a50001  // 000010a0 addiu $a1,$a1,1
+24060002  // 000010a4 li $a2,2
+14a6fff9  // 000010a8 bne $a1,$a2,1090 <test_7+4>
+3c1d0ff0  // 000010ac lui $sp,0xff0
+37bdfff0  // 000010b0 ori $sp,$sp,0xfff0
+241e0007  // 000010b4 li $s8,7
+14fd0040  // 000010b8 bne $a3,$sp,11bc <fail>
+
+@42f      // <test_8>
+24050000  // 000010bc li $a1,0
+3c0200ff  // 000010c0 lui $v0,0xff
+344200ff  // 000010c4 ori $v0,$v0,0xff
+34440f0f  // 000010c8 ori $a0,$v0,0xf0f
+00000000  // 000010cc nop
+24870000  // 000010d0 addiu $a3,$a0,0
+24a50001  // 000010d4 addiu $a1,$a1,1
+24060002  // 000010d8 li $a2,2
+14a6fff8  // 000010dc bne $a1,$a2,10c0 <test_8+4>
+3c1d00ff  // 000010e0 lui $sp,0xff
+37bd0fff  // 000010e4 ori $sp,$sp,0xfff
+241e0008  // 000010e8 li $s8,8
+14fd0033  // 000010ec bne $a3,$sp,11bc <fail>
+
+@43c      // <test_9>
+24050000  // 000010f0 li $a1,0
+3c02f00f  // 000010f4 lui $v0,0xf00f
+3442f00f  // 000010f8 ori $v0,$v0,0xf00f
+3444f0f0  // 000010fc ori $a0,$v0,0xf0f0
+00000000  // 00001100 nop
+00000000  // 00001104 nop
+24870000  // 00001108 addiu $a3,$a0,0
+24a50001  // 0000110c addiu $a1,$a1,1
+24060002  // 00001110 li $a2,2
+14a6fff7  // 00001114 bne $a1,$a2,10f4 <test_9+4>
+3c1df00f  // 00001118 lui $sp,0xf00f
+37bdf0ff  // 0000111c ori $sp,$sp,0xf0ff
+241e0009  // 00001120 li $s8,9
+14fd0025  // 00001124 bne $a3,$sp,11bc <fail>
+
+@44a      // <test_10>
+24050000  // 00001128 li $a1,0
+3c020ff0  // 0000112c lui $v0,0xff0
+34420ff0  // 00001130 ori $v0,$v0,0xff0
+3444f0f0  // 00001134 ori $a0,$v0,0xf0f0
+24a50001  // 00001138 addiu $a1,$a1,1
+24060002  // 0000113c li $a2,2
+14a6fffa  // 00001140 bne $a1,$a2,112c <test_10+4>
+3c1d0ff0  // 00001144 lui $sp,0xff0
+37bdfff0  // 00001148 ori $sp,$sp,0xfff0
+241e000a  // 0000114c li $s8,10
+149d001a  // 00001150 bne $a0,$sp,11bc <fail>
+
+@455      // <test_11>
+24050000  // 00001154 li $a1,0
+3c0200ff  // 00001158 lui $v0,0xff
+344200ff  // 0000115c ori $v0,$v0,0xff
+00000000  // 00001160 nop
+34440f0f  // 00001164 ori $a0,$v0,0xf0f
+24a50001  // 00001168 addiu $a1,$a1,1
+24060002  // 0000116c li $a2,2
+14a6fff9  // 00001170 bne $a1,$a2,1158 <test_11+4>
+3c1d00ff  // 00001174 lui $sp,0xff
+37bd0fff  // 00001178 ori $sp,$sp,0xfff
+241e000b  // 0000117c li $s8,11
+149d000e  // 00001180 bne $a0,$sp,11bc <fail>
+
+@461      // <test_12>
+24050000  // 00001184 li $a1,0
+3c02f00f  // 00001188 lui $v0,0xf00f
+3442f00f  // 0000118c ori $v0,$v0,0xf00f
+00000000  // 00001190 nop
+00000000  // 00001194 nop
+3444f0f0  // 00001198 ori $a0,$v0,0xf0f0
+24a50001  // 0000119c addiu $a1,$a1,1
+24060002  // 000011a0 li $a2,2
+14a6fff8  // 000011a4 bne $a1,$a2,1188 <test_12+4>
+3c1df00f  // 000011a8 lui $sp,0xf00f
+37bdf0ff  // 000011ac ori $sp,$sp,0xf0ff
+241e000c  // 000011b0 li $s8,12
+149d0001  // 000011b4 bne $a0,$sp,11bc <fail>
+141e0003  // 000011b8 bne $zero,$s8,11c8 <pass>
+
+@46f      // <fail>
+409ea800  // 000011bc mtc0 $s8,$21
+1000ffff  // 000011c0 b 11c0 <fail+4>
+00000000  // 000011c4 nop
+
+@472      // <pass>
+4080a800  // 000011c8 mtc0 $zero,$21
+1000ffff  // 000011cc b 11cc <pass+4>
+00000000  // 000011d0 nop
+00000000  // 000011d4 nop
+00000000  // 000011d8 nop
+00000000  // 000011dc nop
+
+@478      // <_fdata>
+00000000  // 000011e0 nop
+00000001  // 000011e4 movf $zero,$zero,$fcc0
+00000002  // 000011e8 srl $zero,$zero,0x0
+00000003  // 000011ec sra $zero,$zero,0x0
+00000004  // 000011f0 sllv $zero,$zero,$zero
+00000005  // 000011f4 selsl $zero,$zero,$zero
+00000006  // 000011f8 srlv $zero,$zero,$zero
+00000007  // 000011fc srav $zero,$zero,$zero
+00000008  // 00001200 jr $zero
+
+@481      // <__testsentinel>
+deadbeef  // 00001204 ld $t5,-16657($s5)
+
+@482      // <__teststatus>
+00005804  // 00001208 sllv $t3,$zero,$zero
+00000000  // 0000120c nop
+
+@484      // <.reginfo>
+600000f4  // 00001210 daddi $zero,$zero,244
+00000000  // 00001214 nop
+00000000  // 00001218 nop
+00000000  // 0000121c nop
+00000000  // 00001220 nop
+00009200  // 00001224 sll $s2,$zero,0x8

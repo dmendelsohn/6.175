@@ -1,0 +1,44 @@
+
+@400      // <_ftext>
+24080001  // 00001000 li $t0,1
+1008ffff  // 00001004 beq $zero,$t0,1004 <_ftext+4>
+1008ffff  // 00001008 beq $zero,$t0,1008 <_ftext+8>
+1008ffff  // 0000100c beq $zero,$t0,100c <_ftext+c>
+1008ffff  // 00001010 beq $zero,$t0,1010 <_ftext+10>
+1008ffff  // 00001014 beq $zero,$t0,1014 <_ftext+14>
+1008ffff  // 00001018 beq $zero,$t0,1018 <_ftext+18>
+24020001  // 0000101c li $v0,1
+1002ffff  // 00001020 beq $zero,$v0,1020 <_ftext+20>
+24030001  // 00001024 li $v1,1
+1003ffff  // 00001028 beq $zero,$v1,1028 <_ftext+28>
+4080a800  // 0000102c mtc0 $zero,$21
+1000ffff  // 00001030 b 1030 <_ftext+30>
+00000000  // 00001034 nop
+00000000  // 00001038 nop
+00000000  // 0000103c nop
+
+@410      // <_fdata>
+00000000  // 00001040 nop
+00000001  // 00001044 movf $zero,$zero,$fcc0
+00000002  // 00001048 srl $zero,$zero,0x0
+00000003  // 0000104c sra $zero,$zero,0x0
+00000004  // 00001050 sllv $zero,$zero,$zero
+00000005  // 00001054 selsl $zero,$zero,$zero
+00000006  // 00001058 srlv $zero,$zero,$zero
+00000007  // 0000105c srav $zero,$zero,$zero
+00000008  // 00001060 jr $zero
+
+@419      // <__testsentinel>
+deadbeef  // 00001064 ld $t5,-16657($s5)
+
+@41a      // <__teststatus>
+00005804  // 00001068 sllv $t3,$zero,$zero
+00000000  // 0000106c nop
+
+@41c      // <.reginfo>
+0000010c  // 00001070 syscall 0x4
+00000000  // 00001074 nop
+00000000  // 00001078 nop
+00000000  // 0000107c nop
+00000000  // 00001080 nop
+00009060  // 00001084 0x9060
